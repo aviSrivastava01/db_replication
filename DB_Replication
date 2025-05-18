@@ -1,0 +1,28 @@
+
+System Design : DB replication :
+
+Requirement : 
+
+There is a company , that operates 30 regional databases, all sharing the same schema.
+
+Each region exposes a REST API that serves committed row-level changes. This API:
+
+Accepts parameters sequenceId and size.
+
+and Returns up to size transactions, starting from sequenceId, in ascending order.
+
+Each transaction contains all mutated records (inserts, updates, deletes) within that transaction.
+
+
+We need to build a system that continuously replicates all changes from every region into a central Oracle database, storing the data into unified logical tables (i.e., single table per entity type shared by all regions).
+
+Note : Since duplicates or concurrent writes are possible, the system must handle primary key conflicts deterministically and ensure no data corruption.
+
+
+
+find the full requirement and detailed excalidraw link
+
+https://excalidraw.com/#json=tUXbByXxOcHfzRI9xMh-B,9ky_71IMcN_jH7oyzkWXhw
+
+
+
